@@ -36,7 +36,3 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-
-# JS
-[Nn]ode_modules/
-[dD]ist/
