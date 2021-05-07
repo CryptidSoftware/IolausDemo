@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div>
+    <form method="POST">
+        <label>
+            Number of Dice
+            <input asp-for="NumDice" type="number" value="5">
+        </label>
+        <br>
+        <label>
+            Sides per Die
+            <input asp-for="SidesPerDie" type="number" value="20">
+        </label>
+        <br>
+        <label>
+            Include Stats
+            <input asp-for="Stats" type="checkbox">
+        </label>
+        <br>
+        <input type="submit" value="Submit the form">
+    </form>
+</div>
+<div>
+    <pre>@Model.Reply</pre>
+</div>

@@ -1,0 +1,23 @@
+[
+    {
+        "Pattern": {
+            "$.type": "dice",
+            "$.cmd": "roll"
+        },
+        "Route" : {
+            "Type": "NATS",
+            "Subject": "dice.roll"
+        }
+    },
+    {
+        "Pattern": {
+            "$.type": "dice",
+            "$.cmd": "roll",
+            "$.Stats": true
+        },
+        "Route" : {
+            "Type": "HTTP",
+            "Url": "http://localhost:6000/dice/roll"
+        }
+    }
+]

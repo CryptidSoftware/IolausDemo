@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\iolaus\src\Iolaus\Iolaus.csproj" />
+    <ProjectReference Include="..\iolaus\src\Iolaus.Routes.Http\Iolaus.Routes.Http.csproj" />
+    <ProjectReference Include="..\iolaus\src\Iolaus.Routes.Nats\Iolaus.Routes.Nats.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NATS.Client" Version="0.12.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
