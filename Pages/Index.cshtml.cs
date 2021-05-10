@@ -40,17 +40,20 @@ namespace IolausDemo.Pages
         public async Task OnPost()
         {
             var message = new {type = "dice", cmd = "roll", NumDice, SidesPerDie, Stats};
-            var serialized = JsonSerializer.Serialize(message);
-            var m = Message.Parse(serialized).Unsafe();
-
-            var send = _router.GetFunc(m);
-            var stream = send(m);
-
-            var firstResponse = await stream.FirstAsync();
-            Reply = firstResponse.Match(
-                Some: (msg) => msg.ToString(),
-                None: () => "No Reply"
-            );
+            Reply = await Message.FromObject(message)
+                .Match(
+                    Some: async (m) => 
+                    {
+                        var send = _router.GetFunc(m);
+                        var stream = send(m);
+                        var firstResponse = await stream.FirstAsync();
+                        return firstResponse.Match(
+                            Some: (response) => response.ToString(),
+                            None: () => "No Reply"
+                        );
+                    },
+                    None: () => Task.FromResult("Parse Error")
+                );
         }
     }
 }
