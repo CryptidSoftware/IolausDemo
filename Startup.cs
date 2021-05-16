@@ -1,4 +1,4 @@
-using Iolaus.Routes;
+using Iolaus;
 using Iolaus.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,8 +32,8 @@ namespace IolausDemo
             services.AddSingleton<Iolaus.Config.IConfigurationProvider>(configReader);
 
             services.AddRouteRegistry(r => {
-                r.Add("NATS", Iolaus.Routes.Nats.NatsRoute.Route);
-                r.Add("HTTP", Iolaus.Routes.Http.HttpRoute.Route);
+                r.Add("NATS", Iolaus.Nats.NatsRoute.Route);
+                r.Add("HTTP", Iolaus.Http.HttpRoute.Route);
             });
 
             services.AddSingleton<Router>();

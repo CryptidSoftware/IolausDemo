@@ -2,8 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\iolaus\src\Iolaus\Iolaus.csproj" />
-    <ProjectReference Include="..\iolaus\src\Iolaus.Routes.Http\Iolaus.Routes.Http.csproj" />
-    <ProjectReference Include="..\iolaus\src\Iolaus.Routes.Nats\Iolaus.Routes.Nats.csproj" />
+    <ProjectReference Include="..\iolaus\src\Iolaus.Http\Iolaus.Http.csproj" />
+    <ProjectReference Include="..\iolaus\src\Iolaus.Nats\Iolaus.Nats.csproj" />
   </ItemGroup>
 
   <ItemGroup>
